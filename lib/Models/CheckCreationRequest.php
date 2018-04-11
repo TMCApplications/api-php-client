@@ -112,7 +112,7 @@ class CheckCreationRequest implements ArrayAccess
         'tags' => 'setTags',
         'suppress_form_emails' => 'setSuppressFormEmails',
         'charge_applicant_for_check' => 'setChargeApplicantForCheck',
-        'async' => 'async'
+        'async' => 'setAsync'
     ];
 
 
@@ -129,7 +129,7 @@ class CheckCreationRequest implements ArrayAccess
         'tags' => 'getTags',
         'suppress_form_emails' => 'getSuppressFormEmails',
         'charge_applicant_for_check' => 'getChargeApplicantForCheck',
-        'async' => 'async'
+        'async' => 'getAsync'
     ];
 
     public static function attributeMap()
