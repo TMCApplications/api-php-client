@@ -73,7 +73,8 @@ class CheckCreationRequest implements ArrayAccess
         'criminal_history_report_details' => 'object',
         'tags' => 'string[]',
         'suppress_form_emails' => 'bool',
-        'charge_applicant_for_check' => 'bool'
+        'charge_applicant_for_check' => 'bool',
+        'async' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -93,7 +94,8 @@ class CheckCreationRequest implements ArrayAccess
         'criminal_history_report_details' => 'criminal_history_report_details',
         'tags' => 'tags',
         'suppress_form_emails' => 'suppress_form_emails',
-        'charge_applicant_for_check' => 'charge_applicant_for_check'
+        'charge_applicant_for_check' => 'charge_applicant_for_check',
+        'async' => 'async'
     ];
 
 
@@ -109,7 +111,8 @@ class CheckCreationRequest implements ArrayAccess
         'criminal_history_report_details' => 'setCriminalHistoryReportDetails',
         'tags' => 'setTags',
         'suppress_form_emails' => 'setSuppressFormEmails',
-        'charge_applicant_for_check' => 'setChargeApplicantForCheck'
+        'charge_applicant_for_check' => 'setChargeApplicantForCheck',
+        'async' => 'async'
     ];
 
 
@@ -125,7 +128,8 @@ class CheckCreationRequest implements ArrayAccess
         'criminal_history_report_details' => 'getCriminalHistoryReportDetails',
         'tags' => 'getTags',
         'suppress_form_emails' => 'getSuppressFormEmails',
-        'charge_applicant_for_check' => 'getChargeApplicantForCheck'
+        'charge_applicant_for_check' => 'getChargeApplicantForCheck',
+        'async' => 'async'
     ];
 
     public static function attributeMap()
@@ -167,6 +171,7 @@ class CheckCreationRequest implements ArrayAccess
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['suppress_form_emails'] = isset($data['suppress_form_emails']) ? $data['suppress_form_emails'] : null;
         $this->container['charge_applicant_for_check'] = isset($data['charge_applicant_for_check']) ? $data['charge_applicant_for_check'] : null;
+        $this->container['async'] = isset($data['async']) ? $data['async'] : null;
     }
 
     /**
@@ -365,6 +370,28 @@ class CheckCreationRequest implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets async
+     * @return bool
+     */
+    public function getAsync()
+    {
+        return $this->container['async'];
+    }
+
+    /**
+     * Sets async
+     * @param bool async If this is set to true, checks will be queued for processing and no reports will be returned immediately. Defaults to false
+     * @return $this
+     */
+    public function setAsync($async)
+    {
+        $this->container['async'] = $async;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
